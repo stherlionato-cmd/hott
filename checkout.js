@@ -1,4 +1,4 @@
-const API_BASE = "hott.stherlionato.workers.dev";
+const API_BASE = "https://hott.stherlionato.workers.dev";
 
 const products = {
   content: { name: "5 fotos + 3 vídeos", price: 10 },
