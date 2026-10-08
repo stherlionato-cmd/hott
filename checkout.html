@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pagamento PIX</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="container narrow">
+  <a class="back" href="index.html">← Voltar</a>
+
+  <section class="card">
+    <div id="stepForm">
+      <div class="badge">CHECKOUT</div>
+      <h1 id="productName">Seu pedido</h1>
+      <div class="price" id="productPrice">R$ 0,00</div>
+
+      <form id="checkoutForm">
+        <label>Nome
+          <input id="name" name="name" autocomplete="name" required maxlength="100">
+        </label>
+
+        <label>E-mail
+          <input id="email" name="email" type="email" autocomplete="email" required maxlength="150">
+        </label>
+
+        <label>CPF
+          <input id="document" name="document" inputmode="numeric" maxlength="14" placeholder="000.000.000-00" required>
+        </label>
+
+        <button class="primary" type="submit" id="payBtn">Gerar PIX</button>
+        <p class="error" id="formError"></p>
+      </form>
+    </div>
+
+    <div id="stepPix" hidden>
+      <div class="status pending">⏳ Aguardando pagamento</div>
+      <h2 id="pixTitle">Pague via PIX</h2>
+      <p class="muted">Escaneie o QR Code ou copie o código PIX abaixo.</p>
+
+      <img id="qr" class="qr" alt="QR Code PIX">
+      <button class="copy" id="copyBtn">Copiar código PIX</button>
+      <textarea id="pixCode" readonly aria-label="Código PIX"></textarea>
+
+      <div class="timer">Expira em <b id="timer">--:--</b></div>
+      <p class="muted small">A página verifica automaticamente a confirmação.</p>
+      <p class="error" id="pixError"></p>
+    </div>
+
+    <div id="stepSuccess" hidden>
+      <div class="successIcon">✓</div>
+      <div class="status paid">Pagamento confirmado</div>
+      <h2>Obrigado!</h2>
+      <p id="successText">Seu pedido foi confirmado.</p>
+      <div id="delivery"></div>
+      <a class="primary linkButton" href="index.html">Voltar</a>
+    </div>
+  </section>
+</main>
+<script src="checkout.js"></script>
+</body>
+</html>
