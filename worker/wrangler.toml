@@ -1,0 +1,9 @@
+name = "pix-checkout"
+main = "index.js"
+compatibility_date = "2026-10-08"
+
+[vars]
+ALLOWED_ORIGIN = "https://SEU-SITE.pages.dev"
+
+# Configure a chave secreta pelo painel/CLI:
+# wrangler secret put LARANJINHA_SECRET_KEY
